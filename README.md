@@ -20,11 +20,9 @@ docker exec -it sample-taskqueue-dramatiq-dramatiq-1 bash
 
 ./bin/execute_test_task.sh
 
-```
+# or
 
-```python
 python3 -c "from dramatiq_taskqueue import tasks; tasks.test_task.send('test_input')"
 python3 -c "from dramatiq_taskqueue import tasks; tasks.test_task_always_fail.send('test_input')"
 
 ```
-
