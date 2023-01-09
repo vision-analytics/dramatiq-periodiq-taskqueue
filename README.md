@@ -6,13 +6,11 @@ Simple <b>dramatiq</b> task queue starter project.
 
 ## Getting started
 
-
 ```bash
 docker-compose up --build
 ```
 
 ## Run a dummy task
-
 
 ```bash
 
@@ -23,11 +21,13 @@ docker exec -it sample-taskqueue-dramatiq-dramatiq-1 bash
 # or
 
 python3 -c "from dramatiq_taskqueue import tasks; tasks.test_task.send('test_input')"
-python3 -c "from dramatiq_taskqueue import tasks; tasks.test_task_always_fail.send('test_input')"
+python3 -c "from dramatiq_taskqueue import tasks; tasks.test_task_fail.send('test_input2')"
+python3 -c "from dramatiq_taskqueue import tasks; tasks.test_task_fail2.send('test_input3')"
 
 ```
 
 ## Sample logs
+
 ```bash
 sample-taskqueue-dramatiq-periodiq-1  | [2023-01-09 19:54:39,694] [PID 7] [MainThread] [periodiq] [INFO] Scheduling Actor(test_scheduled_task_1) at 2023-01-09T19:54:40+00:00.
 sample-taskqueue-dramatiq-periodiq-1  | [2023-01-09 19:54:39,694] [PID 7] [MainThread] [dramatiq.broker.RedisBroker] [DEBUG] Enqueueing message '70ff2833-7699-44d7-8227-56e8c8ce011e' on queue 'default'.
