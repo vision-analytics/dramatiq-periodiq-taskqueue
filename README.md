@@ -1,17 +1,17 @@
 # sample-taskqueue-dramatiq
 
-Sample <b>dramatiq</b> task queue setup.
+Simple <b>dramatiq</b> task queue starter project.
 
 <b>periodiq</b> is used for scheduled tasks.
 
-## Getting Started
+## Getting started
 
 
 ```bash
 docker-compose up --build
 ```
 
-## run a test task
+## Run a dummy task
 
 
 ```bash
