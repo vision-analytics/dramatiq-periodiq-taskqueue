@@ -1,11 +1,30 @@
 # sample-taskqueue-dramatiq
 
+Sample <b>dramatiq</b> task queue setup.
 
-## installation
+<b>periodiq</b> is used for scheduled tasks.
 
-docker build -t test-dramatiq:0.0.0 .
+## Getting Started
 
 
-## run
+```bash
+docker-compose up --build
+```
 
-docker run -it test-dramatiq:0.0.0 
+## run a test task
+
+
+```bash
+
+docker exec -it sample-taskqueue-dramatiq-dramatiq-1 bash
+
+./bin/execute_test_task.sh
+
+```
+
+```python
+python3 -c "from dramatiq_taskqueue import tasks; tasks.test_task.send('test_input')"
+python3 -c "from dramatiq_taskqueue import tasks; tasks.test_task_always_fail.send('test_input')"
+
+```
+
